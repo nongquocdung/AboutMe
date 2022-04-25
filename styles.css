@@ -1,0 +1,417 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto:ital,wght@0,300;0,500;0,900;1,900&family=Sacramento&display=swap");
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+:root {
+  --dark-blue: #006778;
+  --med-blue: #0093ab;
+  --light-blue: #00afc1;
+  --yellow: #ffd124;
+  --blue-shadow: #267987;
+  --yellow-shadow: #807a65;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {
+    width: 8.33%;
+  }
+  .col-s-2 {
+    width: 16.66%;
+  }
+  .col-s-3 {
+    width: 25%;
+  }
+  .col-s-4 {
+    width: 33.33%;
+  }
+  .col-s-5 {
+    width: 41.66%;
+  }
+  .col-s-6 {
+    width: 50%;
+  }
+  .col-s-7 {
+    width: 58.33%;
+  }
+  .col-s-8 {
+    width: 66.66%;
+  }
+  .col-s-9 {
+    width: 75%;
+  }
+  .col-s-10 {
+    width: 83.33%;
+  }
+  .col-s-11 {
+    width: 91.66%;
+  }
+  .col-s-12 {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {
+    width: 8.33%;
+  }
+  .col-2 {
+    width: 16.66%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.33%;
+  }
+  .col-5 {
+    width: 41.66%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-7 {
+    width: 58.33%;
+  }
+  .col-8 {
+    width: 66.66%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-10 {
+    width: 83.33%;
+  }
+  .col-11 {
+    width: 91.66%;
+  }
+  .col-12 {
+    width: 100%;
+  }
+}
+
+body {
+  background-image: linear-gradient(
+    to right,
+    var(--dark-blue),
+    var(--med-blue)
+  );
+  margin: 5% 15%;
+}
+
+.wrapper {
+  background-color: var(--yellow);
+  height: 100%;
+}
+
+.avatar {
+  position: relative;
+  float: left;
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  background-color: var(--yellow);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px #807a65;
+}
+
+.avatar img {
+  width: 85%;
+  height: 85%;
+  border-radius: 100%;
+}
+
+.line {
+  position: relative;
+  z-index: 0;
+  float: left;
+  border-radius: 50px;
+  margin-left: -200px;
+  background-color: var(--yellow);
+  width: fit-content;
+  height: 100px;
+  padding-left: 220px;
+  padding-right: 30px;
+  display: flex;
+  box-shadow: 5px 5px #807a65;
+}
+
+.line span {
+  align-self: center;
+  font-size: 50px;
+  font-weight: 700;
+  color: transparent;
+  background-image: linear-gradient(
+    to right,
+    var(--dark-blue),
+    var(--light-blue)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.flex-box {
+  display: flex;
+}
+
+.titles {
+  margin-top: 5%;
+}
+
+.box {
+  background-color: var(--med-blue);
+  width: 2%;
+  height: 100px;
+  border-radius: 10px;
+  box-shadow: 5px 5px var(--blue-shadow);
+  display: flex;
+  transition: width 0.5s;
+  cursor: pointer;
+}
+
+.box:hover {
+  width: 55%;
+  background-color: var(--light-blue);
+  transform: scale(1.5);
+}
+
+.active {
+  width: 55%;
+  background-color: var(--light-blue);
+  transform: scale(1.5);
+}
+
+.title {
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  margin: auto auto;
+  text-shadow: 5px 5px var(--blue-shadow);
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes example {
+  0% {
+    left: -2000px;
+  }
+  12.5% {
+    left: -1000px;
+  }
+  25% {
+    left: -600px;
+  }
+  37.5% {
+    left: -200px;
+  }
+  50% {
+    left: 0px;
+  }
+  62.5% {
+    left: 200px;
+  }
+  75% {
+    left: 100px;
+  }
+  87.5% {
+    left: 50px;
+  }
+  100% {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.animation {
+  animation-name: example;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  position: relative;
+}
+
+.container {
+  margin: 10% 15% 0 15%;
+  height: fit-content;
+  padding: 2% 2%;
+  background-color: #ffd124;
+  border-radius: 10px;
+  box-shadow: 5px 5px #807a65;
+  color: #267987;
+}
+
+.container p,
+span {
+  font-size: 20px;
+  font-weight: 700;
+  color: #006778;
+}
+
+.contact-box {
+  margin: 10px 0;
+  display: flex;
+}
+
+.contact-box .info {
+  margin-left: 15px;
+}
+
+.space {
+  margin: 10px 0;
+}
+
+.skills {
+  margin-top: 15px;
+  padding: 0 10px;
+}
+
+@keyframes load {
+  from {
+    width: 0%;
+  }
+}
+
+.bar {
+  background-color: var(--dark-blue);
+  padding: 2px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.bar::before {
+  content: attr(data-skill);
+  background-image: linear-gradient(
+    to right,
+    var(--blue-shadow),
+    var(--med-blue),
+    var(--light-blue)
+  );
+  display: inline-block;
+  padding: 5px 0 5px 10px;
+  border-radius: inherit;
+  animation: load 2s 0s;
+}
+
+.bar.front::before {
+  background-color: #ffcc33;
+}
+.bar.back::before {
+  background-color: #a6cfe3;
+}
+
+.bar.angular::before {
+  width: calc(65% - 10px);
+}
+.bar.html::before {
+  width: calc(60% - 10px);
+}
+.bar.javaee::before {
+  width: calc(80% - 10px);
+}
+.bar.mysql::before {
+  width: calc(75% - 10px);
+}
+.bar.git::before {
+  width: calc(70% - 10px);
+}
+
+.projects {
+  margin-top: 15px;
+  padding: 0 10px;
+}
+
+.project {
+  margin-bottom: 15px;
+}
+
+.project-title {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.project-name {
+  flex: 1;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.project-time {
+  margin-top: 10px;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.project ul {
+  margin: 15px 20px;
+}
+
+.role {
+  background-color: var(--blue-shadow);
+  border-radius: 10px;
+  font-size: 15px;
+  color: var(--yellow);
+  padding: 5px;
+}
+
+li.group:before {
+  content: "\f0c0"; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}
+
+li.tech:before {
+  content: "\f16c"; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}
+
+li.details:before {
+  content: "\f02d"; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}
